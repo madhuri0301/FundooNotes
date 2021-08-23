@@ -1,0 +1,91 @@
+<!-- Parent Div -->
+<div class="container" fxFlex=60 fxLayout="row" fxFlex.xs=100>
+
+
+    <div class="container-form" fxFlex.xs=100 fxFlex.sm=80>
+
+        <!-- Div For Fundoo Tag And Create Account -->
+        <div>
+            <p class="fundoo" style="font-size: 25px; padding-bottom: 5%;" >
+                <span style="color:blue">F</span>
+                <span style="color:red">u</span>
+                <span style="color:orange">n</span>
+                <span style="color:blue">d</span>
+                <span style="color:green">o</span>
+                <span style="color:red">o</span>
+            </p>
+            <span class="line2" style="font-size: 25px;">Create your Google Account</span>
+        </div>
+
+        <!-- Form on Left Div -->
+        <div id="form-container" class="form" style="padding-top: 10%;">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                <!-- div For First Name And Last Name -->
+                <div class="First-Last-Name" fxLayoutGap="20px" fxLayoutGap.xs="0px" fxLayout.xs="column">
+                    <mat-form-field appearance="outline" class="firstname">
+                        <mat-label>First name</mat-label>
+                        <input matInput placeholder="firstname" formControlName="firstName">
+                        <mat-hint *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.firstName.errors.required">!First Name is required</mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline" class="lastname">
+                        <mat-label>Last name</mat-label>
+                        <input matInput placeholder="lastname" formControlName="lastName">
+                        <mat-hint *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.lastName.errors.required">!Last Name is required</mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <!-- Div For User Name -->
+                <div>
+                    <mat-form-field appearance="outline" class="username" fxLayout="column wrap">
+                        <mat-label>e-mail</mat-label>
+                        <input matInput placeholder="email" formControlName="email">
+                        <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.email.errors.required">!Email is required</mat-hint>
+                            <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <div class="password-confirm" fxLayoutGap="20px" fxLayoutGap.xs="0px" fxLayout.xs="column">
+
+                    <!-- Div For PassWord And Confirm  -->
+
+                    <mat-form-field appearance="outline" class="confirm">
+                        <mat-label>Confirm</mat-label>
+                        <input matInput placeholder="confirmPassword" formControlName="confirmPassword">
+                        <mat-hint *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.confirmPassword.errors.required">!Confirm Password is required
+                            </mat-hint>
+                            <mat-hint *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <!-- Show Password Div -->
+                <div>
+                    <mat-checkbox class="example-margin" style="padding-top: 8%;">Show Password</mat-checkbox>
+                </div>
+
+                <!-- Buttons -->
+                <div class="button-section" fxLayoutAlign="space-between" style="padding-top: 15%;">
+                    <button mat-button class="button1" >Sign in instead</button>
+                    <button mat-raised-button class="button2">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Right-Side-Container -->
+    <div class="container-img" fxHide.xs fxLayout="column" fxFlexAlign="auto" fxLayoutAlign="center center">
+        <img class="logo" src="assets/account.svg" alt="">
+        <p class="img-caption">One Account. All Of Fundoo<br>Working For You.</p>
+    </div>
+
+</div>

@@ -1,0 +1,36 @@
+.container{
+    border:1px solid gray ;
+    margin: 6% auto;
+    padding: 4% 2%;
+    border-radius: 8px;
+}
+.line2{
+   
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+}
+.logo{
+    margin-left: 50px;
+    height: 50%;
+}
+.img-caption{
+    font-weight: lighter;
+    font-size: 18px;
+    margin-left: 50px;
+}
+.button1{
+    color: #1a73e8;
+}
+.button2{
+    background-color: #1a73e8;
+    color: white;
+}
+@media only screen and (max-width: 599px) {
+    .container{
+        border:none;
+        padding: 4%;
+    }
+
+    .button-section{
+        margin-top: 10%;
+    }
+}
