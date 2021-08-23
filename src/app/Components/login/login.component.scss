@@ -1,56 +1,62 @@
 .container{
-    margin: auto;
-    margin-top: 80px;
+    border:1px solid gray ;
+    margin: 6% auto;
+    padding: 4% 2%;
     border-radius: 8px;
-    max-width: 350px;
-    border: 1px solid gray;
-    padding: 50px; 
-    padding-top: 50px; 
-    font-size: larger;
-    align-items: center;
-    
 }
-// Fundoo Title
-p{
-    font-weight:inherit;
-    font-size: 25px;
-    padding: 0% 0% 0% 35%;
-    font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+@media only screen and (max-width: 599px) {
+    .container{
+        border:none;
+    }
 }
-.line1{
-    font-size: 18px;
-    padding: 0% 0% 0% 38%;
+.button1{
+    color: #1a73e8;
+   
 }
-.line2{
-    font-size: 15px;
-    padding: 0% 0% 0% 22%;
-}
-.email{
-    width: 350px;
-    color: #2d2f35;
-    font-size: 16px;
-    padding-bottom: 0;
-    padding-top: 10px;
-}
-.password{
-    width: 350px;
-    color: #2d2f35;
-    font-size: 16px;
-    padding-bottom: 0;
-}
-
-// for Sign in button
-.forget-email-btn{ 
-    color:#1a73e8; 
-}
-
-.create-account-btn{
-    margin-top: 15%;
+.create-button{
     color: purple;
 }
-.next-btn{
-   
-    margin-left: 40%;
+.next-button{
     background-color: #1a73e8;
     color: white;
 }
+   
+    
+// }
+// // Fundoo Title
+// p{
+//     font-weight:inherit;
+//     font-size: 25px;
+//     padding: 0% 0% 0% 35%;
+//     font-family: roboto,'Noto Sans Myanmar UI',arial,sans-serif;
+// }
+
+// .email{
+//     width: 350px;
+//     color: #2d2f35;
+//     font-size: 16px;
+//     padding-bottom: 0;
+//     padding-top: 10px;
+// }
+// .password{
+//     width: 350px;
+//     color: #2d2f35;
+//     font-size: 16px;
+//     padding-bottom: 0;
+// }
+
+// // for Sign in button
+// .forget-email-btn{ 
+//     color:#1a73e8; 
+// }
+
+// .create-account-btn{
+//     margin-top: 15%;
+//     color: purple;
+// }
+// .next-btn{
+   
+//     margin-left: 40%;
+//     background-color: #1a73e8;
+//     color: white;
+// }

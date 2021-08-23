@@ -1,56 +1,58 @@
-<!-- Parent Div -->
-<div class="container">
-    <!-- Div For Fundoo Tag And Create Account -->
-    <div>
-        <p>
-            <span style="color:blue">F</span>
-            <span style="color:red">u</span>
-            <span style="color:orange">n</span>
-            <span style="color:blue">d</span>
-            <span style="color:green">o</span>
-            <span style="color:red">o</span>
-        </p>
+<div class="container" fxFlex=30  fxFlex.xs=100>
 
+    <div class="container-form" fxFlex.xs=100 fxFlex.sm=80>
 
-        <p class="line1">Sign in</p>
-        <p class="line2">Use Your Fundoo Account</p>
-    </div>
+        <div>
+            <p class="fundoo" style="font-size: 25px; padding-left: 120px; ">
+                <span style="color:blue">F</span>
+                <span style="color:red">u</span>
+                <span style="color:orange">n</span>
+                <span style="color:blue">d</span>
+                <span style="color:green">o</span>
+                <span style="color:red">o</span>
+            </p>
+            <span class="line1" style="font-size: 15px; padding-left: 134px; font-weight: bold;">Sign In</span>
+            <h1 class="line2" style="font-size: 14px; padding-left: 90px;">Use Your Fundoo Account</h1>
+        </div>
 
-    <div id="form-container" class="form" style="padding-top: 10%;">
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div id="form-container" class="form" style="padding-top: 10%;">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-            <div>
-                <mat-form-field appearance="outline" class="username" fxLayout="column wrap">
-                    <mat-label>e-mail</mat-label>
-                    <input matInput placeholder="email" formControlName="email">
-                    <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                        <mat-hint *ngIf="f.email.errors.required">!Email is required</mat-hint>
-                        <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
-                    </mat-hint>
-                </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field appearance="outline" class="password">
-                    <mat-label>Password</mat-label>
-                    <input matInput placeholder="password" formControlName="password">
-                    <mat-hint *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                        <mat-hint *ngIf="f.password.errors.required">!Password is required</mat-hint>
-                        <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                <!-- div For First Name And Last Name -->
+                <div>
+                    <mat-form-field appearance="outline" class="username" fxLayout="column wrap">
+                        <mat-label>Email Or Phone</mat-label>
+                        <input matInput placeholder="email" formControlName="email">
+                        <mat-hint *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.email.errors.required">!Email is required</mat-hint>
+                            <mat-hint *ngIf="f.email.errors.email">Email must be a valid email address</mat-hint>
                         </mat-hint>
-                    </mat-hint>
-                </mat-form-field>
-            </div>
-
-
-
+                    </mat-form-field>
+                </div>
                 <div>
-                    <button mat-button class="forget-email-btn">Forget email?</button>
+
+                    <mat-form-field appearance="outline" class="password" fxLayout="column wrap">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="password" formControlName="password">
+                        <mat-hint *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <mat-hint *ngIf="f.password.errors.required">!Password is required</mat-hint>
+                            <mat-hint *ngIf="f.password.errors.minlength">Password must be at least 6 characters
+                            </mat-hint>
+                        </mat-hint>
+                    </mat-form-field>
+
                 </div>
 
-                <div>
-                    <button mat-button class="create-account-btn" routerLink="/register">Create Account</button>
-                    <button mat-raised-button class="next-btn">Go</button>
+                <div class="button-section">
+                    <button mat-button class="button1" >Forget email?</button>
                 </div>
-        </form>
+    
+                <div class="button-section2" fxLayoutAlign="space-between" style="padding-top: 15%;">
+                    <button mat-button class="create-button" >Create account</button>
+                    <button mat-raised-button class="next-button">Next</button>
+                </div>
+            </form>
+            
+        </div>
     </div>
 </div>
