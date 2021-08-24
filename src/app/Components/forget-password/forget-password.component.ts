@@ -13,13 +13,9 @@ export class ForgetPasswordComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.forgetpassword = this.formBuilder.group({
 
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-
+     
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required],
-      service: ['advance', Validators.requiredTrue]
+     
     });
    }
   ngOnInit(): void {
