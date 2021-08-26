@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,7 +37,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCheckboxModule,
     MatButtonModule,
     ReactiveFormsModule,
-    FlexLayoutModule 
+    FlexLayoutModule,
+    FormsModule,
+    MatSnackBarModule,
+    HttpClientModule
     
   ],
   
