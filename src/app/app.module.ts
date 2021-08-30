@@ -26,6 +26,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { MatListModule } from '@angular/material/list';
+import { GetNotesComponent } from './Components/dashboard/get-notes/get-notes.component';
+import { TakeNotesComponent } from './Components/dashboard/take-notes/take-notes.component';
+import { NotesComponent } from './Components/dashboard/notes/notes.component';
 
 
 
@@ -37,7 +40,10 @@ import { MatListModule } from '@angular/material/list';
     RegistrationComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    GetNotesComponent,
+    TakeNotesComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,

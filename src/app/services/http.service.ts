@@ -17,11 +17,11 @@ export class HttpService {
   }
   Get(url: any, data: any, token: any, headers: boolean)
   {
-    return this.http.post(this.BaseUrl + url, data);
+    return this.http.get(this.BaseUrl + url, data);
   }
   Put(url: any, data: any, token: any, headers: boolean)
   {
-    return this.http.post(this.BaseUrl + url, data);
+    return this.http.put(this.BaseUrl + url, data);
   }
   Delete(){}
 }
