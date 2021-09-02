@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 // import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 // import { MatSnackBarConfig } from '@angular/material/snack-bar';
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private formBuilder: FormBuilder, private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService, public route: Router) { }
 
 
   ngOnInit(): void {
@@ -43,9 +44,15 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.value.email,
       password: this.loginForm.value.password,
     }
-    this.user.login(reqData).subscribe(
-      (response) => { console.log(response); }
-    )
+    this.user.login(reqData).subscribe
+      (
+        (response: any) => {
+          localStorage.setItem('Token', response['id']);
+          console.log(response);
+          this.route.navigate(['home']);
+        }
+      );
+
     // this.user.login(reqData).subscribe(
     //   (response:any)=>{
     //     localStorage.setItem('Token', response['token']);
@@ -70,5 +77,5 @@ export class LoginComponent implements OnInit {
     //   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
     // }
 
-  }
+      }
 }
