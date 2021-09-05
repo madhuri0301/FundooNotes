@@ -7,6 +7,10 @@ import { LoginComponent } from './Components/login/login.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { ResetPasswordComponent } from './Components/reset-password/reset-password.component';
 import { AuthenticationGuard } from './Components/authentication.guard';
+import { ReminderComponent } from './Components/reminder/reminder.component';
+import { LabelsComponent } from './Components/labels/labels.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { HeaderComponent } from './Components/header/header.component';
 
 
 const routes: Routes = [
@@ -15,14 +19,17 @@ const routes: Routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'forget-password', component: ForgetPasswordComponent},
   {path: 'resetpassword/:token', component: ResetPasswordComponent},
-
-
   {
-    path: 'home', component: DashboardComponent,canActivate:[AuthenticationGuard],
+    path: 'home', component: HeaderComponent,canActivate:[AuthenticationGuard],
     children: [
   
       { path: '', redirectTo: "notes", pathMatch: "full" },
       { path: 'notes', component: GetNotesComponent },
+      { path: 'reminder', component: ReminderComponent},
+      {path : 'labels', component: LabelsComponent},
+      // {path: 'archive', component: ArchiveComponent},
+      {path: 'trash',component: TrashComponent}
+
     ]
   }];
   

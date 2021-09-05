@@ -29,6 +29,14 @@ import { MatListModule } from '@angular/material/list';
 import { GetNotesComponent } from './Components/get-notes/get-notes.component';
 import { TakeNotesComponent } from './Components/take-notes/take-notes.component';
 import { NotesComponent } from './Components/notes/notes.component';
+import { ReminderComponent } from './Components/reminder/reminder.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogContentComponent } from './Components/dialog-content/dialog-content.component';
+import { HeaderComponent } from './Components/header/header.component';
+import { LabelsComponent } from './Components/labels/labels.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { ArchivesComponent } from './Components/archives/archives.component';
 
 
 
@@ -43,7 +51,13 @@ import { NotesComponent } from './Components/notes/notes.component';
     DashboardComponent,
     GetNotesComponent,
     TakeNotesComponent,
-    NotesComponent
+    NotesComponent,
+    ReminderComponent,
+    DialogContentComponent,
+    HeaderComponent,
+    LabelsComponent,
+    TrashComponent,
+    ArchivesComponent
   ],
   imports: [
     BrowserModule,
@@ -66,11 +80,12 @@ import { NotesComponent } from './Components/notes/notes.component';
     MatMenuModule,
     MatTooltipModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
     
   ],
   
-  providers: [ ],
+  providers: [ { provide: MAT_DIALOG_DATA, useValue: {} }],
     bootstrap: [AppComponent],
     
    
