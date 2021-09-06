@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NotesService } from 'src/app/services/notes.service';
 
 @Component({
   selector: 'app-dialog-content',
@@ -6,10 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog-content.component.scss']
 })
 export class DialogContentComponent implements OnInit {
+  cardUpdateForm!: FormGroup;
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+  private formBuilder: FormBuilder,
+  private noteService: NotesService) { }
 
   ngOnInit(): void {
+    this.cardUpdateForm = this.formBuilder.group({
+      notesId: this.data.notesId,
+      title: this.data.title,
+      color: this.data.color,
+      description: this.data.description
+    })
   }
-
+  updateNote(data: any) {
+    let reqPayload = {
+      NotesId: this.cardUpdateForm.value.notesId,
+      Title: this.cardUpdateForm.value.title,
+      Description: this.cardUpdateForm.value.description
+    }
+    //new trash function rhega like  UpdateExistingNote usme sirf note id pass krna  "NotesId: this.cardUpdateForm.value.notesId"
+    this.noteService.UpdateExistingNote(reqPayload).subscribe((response: any) => {
+      console.log(response);
+      // this.op = response.data;
+      // this.op.reverse();
+      // window.location.reload();
+      // this.updateNote.(this.op);
+    })
+  }
 }

@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NotesService } from 'src/app/services/notes.service';
 import { DialogContentComponent } from '../dialog-content/dialog-content.component';
 
 @Component({
@@ -9,9 +11,8 @@ import { DialogContentComponent } from '../dialog-content/dialog-content.compone
 export class NotesComponent implements OnInit {
   iconVisible: any
   @Input() allNotes: any = [];
-  mate: any;
 
-  constructor() { }
+  constructor(public note: NotesService, private mate: MatDialog) { }
 
   ngOnInit(): void {
   }

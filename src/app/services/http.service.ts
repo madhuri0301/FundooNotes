@@ -23,6 +23,12 @@ export class HttpService {
 
     return this.http.post(this.BaseUrl + url, data,options);
   }
+  // to redirect
+  postt(url: any, data: any, token: any, headers: boolean)
+  {
+    return this.http.post(this.BaseUrl + url, data);
+  }
+  //
   Get(url: any, data: any, token: any, headers: boolean)
   {
     return this.http.get(this.BaseUrl + url, data);
@@ -42,7 +48,24 @@ export class HttpService {
       }
       return this.http.get(this.BaseUrl + url, options);
     }
-  
-  Delete(){}
+  //update notes
+  UpdateNote(id: any) {
+    console.log(id);
+    const data = {
+      title: id.Title,
+      description: id.Description
+    }
+    this.token = localStorage.getItem('Token');
+    let options = {
+      headers: new HttpHeaders({
+        'Authorization': this.token,
+        'Content-Type': 'application/json'
+      })
+    }
+    return this.http.put(this.BaseUrl + '/notes/updateNotes' + id.NotesId, data, options);
+  }
+  Delete(){
+    
+  }
 }
 

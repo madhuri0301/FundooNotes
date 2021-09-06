@@ -52,8 +52,8 @@
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav opened="true" mode="side" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list (mouseover)="isExpandable=true" (mouseleave)="isExpandable=false">
-        <div class="navlist active" fxLayout="row" (mouseover)="isExpandable=true" 
-          fxLayoutAlign="start center" fxLayoutGap="20px" mat-list-item routerLink="/home/notes">
+        <div class="navlist active" fxLayout="row" (mouseover)="isExpandable=true"
+          fxLayoutAlign="start center" fxLayoutGap="20px" mat-list-item routerLink="/home">
           <button class="navBtn btnPosition" mat-icon-button>
             <img src="/assets/lightbulb.svg">
           </button>

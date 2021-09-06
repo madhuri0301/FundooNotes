@@ -18,5 +18,7 @@ export class NotesService {
     return this.http.Post('/notes/addNotes', data, token, true);
 
   }
-  
+  UpdateExistingNote(data: any) {
+    return this.http.UpdateNote(data);
+  }
 }
