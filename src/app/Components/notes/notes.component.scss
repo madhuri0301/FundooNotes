@@ -2,6 +2,7 @@
     margin-top: 20px;
     grid-template-columns: minmax(min-content, 300px) minmax(200px, 1fr) 150px;
   }
+ 
   
   .card {
     width: 240px;
@@ -11,6 +12,8 @@
     transform: all 3s ease-in;
     word-wrap:break-word;
     grid-template-columns: minmax(min-content, 300px) minmax(200px, 1fr) 150px;
+    margin-left: 15px;
+    margin-top: 25px;
   }
   .card:not(:last-child){
     margin-right:10px;

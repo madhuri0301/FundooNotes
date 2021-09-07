@@ -24,11 +24,4 @@ export class NotesComponent implements OnInit {
     dialogRef.afterClosed().subscribe()
   }
 
-  mouseEnter() {
-    this.iconVisible = true;
-  }
-
-  mouseLeave() {
-    this.iconVisible = false;
-  }
 }
