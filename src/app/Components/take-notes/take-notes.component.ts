@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { NotesService } from 'src/app/services/notes.service';
 import { ActivatedRoute } from '@angular/router';
 import { EventEmitter } from '@angular/core';
@@ -22,6 +22,7 @@ export class TakeNotesComponent implements OnInit {
  }
 
   constructor(private note: NotesService, private activeRoute: ActivatedRoute) { }
+ 
 
   ngOnInit(): void {
   
@@ -31,15 +32,32 @@ export class TakeNotesComponent implements OnInit {
       title: this.title,
       description: this.description,
     }
+    console.log(data)
     this.token = localStorage.getItem('Token');
     console.log(" add note data ", data);
-
-    this.note.createNote(this.token, data).subscribe((response) => {
-      console.log(response);
+    if (this.title && this.description) {
+      this.note.createNote(this.token, data).subscribe((response) => {
+        console.log(response);
+        let message = "note created successfull";
+        console.log(message);
       
-    })
+        this.title = "";
+        this.description = "";
+    
+        this.fullEdit = false;
+        // window.location.reload();
+      }, error => {
+        console.log("error in register", error);
+        
+       
 
+      })
+    } else {
+      this.fullEdit = false;
+    }
   }
+
+
   togglePin() {
     this.pin = !this.pin;
   }

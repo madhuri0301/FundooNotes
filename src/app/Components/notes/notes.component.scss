@@ -5,14 +5,14 @@
  
   
   .card {
-    width: 240px;
+    width: 200px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius: 8px;
     transform: all 3s ease-in;
     word-wrap:break-word;
     grid-template-columns: minmax(min-content, 300px) minmax(200px, 1fr) 150px;
-    margin-left: 15px;
+    margin-left: 25px;
     margin-top: 25px;
   }
   .card:not(:last-child){

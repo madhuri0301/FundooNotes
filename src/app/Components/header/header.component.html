@@ -45,7 +45,25 @@
           <mat-icon>view_comfy</mat-icon>
         </button>
       </div>
-      <div matTooltip="Account" mat-card-avatar class="image"><img src="/assets/emplpyee.png" style="height: 40px;"></div>
+      <!-- Log Out Icon -->
+    <div fxLayout="row" fxLayoutAlign="space-around" ngClass="log-out-icon">
+      <button mat-mini-fab color="" matTooltip="Log Out" mat-icon-button [matMenuTriggerFor]="profile">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <mat-menu #profile="matMenu">
+
+        <mat-card-header>
+          <img mat-card-avatar src="assets/emplpyee.png" class="img2" style="margin-left: 35px;">
+          <!-- <mat-card-title><strong>{{userName}}</strong></mat-card-title>
+                    <mat-card-subtitle>{{userEmail}}</mat-card-subtitle> -->
+        </mat-card-header>
+
+        <button class="next-button" mat-button style="margin-left: 18px;">
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </div>
     </div>
   </mat-toolbar>
 
