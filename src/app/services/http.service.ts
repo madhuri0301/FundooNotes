@@ -24,10 +24,10 @@ export class HttpService {
     return this.http.post(this.BaseUrl + url, data,options);
   }
   // to redirect
-  postt(url: any, data: any, token: any, headers: boolean)
-  {
-    return this.http.post(this.BaseUrl + url, data);
-  }
+  // postt(url: any, data: any, token: any, headers: boolean)
+  // {
+  //   return this.http.post(this.BaseUrl + url, data);
+  // }
   //
   Get(url: any, data: any, token: any, headers: boolean)
   {
@@ -52,8 +52,9 @@ export class HttpService {
   UpdateNote(id: any) {
     console.log(id);
     const data = {
-      title: id.Title,
-      description: id.Description
+      noteId:id.noteId,
+      title: id.title,
+      description: id.description
     }
     this.token = localStorage.getItem('Token');
     let options = {
@@ -62,7 +63,7 @@ export class HttpService {
         'Content-Type': 'application/json'
       })
     }
-    return this.http.put(this.BaseUrl + '/notes/updateNotes' + id.NotesId, data, options);
+    return this.http.post(this.BaseUrl + '/notes/updateNotes', data, options);
   }
   Delete(){
     

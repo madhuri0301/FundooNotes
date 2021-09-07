@@ -17,7 +17,7 @@ export class DialogContentComponent implements OnInit {
 
   ngOnInit(): void {
     this.cardUpdateForm = this.formBuilder.group({
-      notesId: this.data.notesId,
+      noteId: this.data.noteId,
       title: this.data.title,
       color: this.data.color,
       description: this.data.description
@@ -25,9 +25,9 @@ export class DialogContentComponent implements OnInit {
   }
   updateNote(data: any) {
     let reqPayload = {
-      NotesId: this.cardUpdateForm.value.notesId,
-      Title: this.cardUpdateForm.value.title,
-      Description: this.cardUpdateForm.value.description
+      noteId: this.data.id,
+      title: this.cardUpdateForm.value.title,
+      description: this.cardUpdateForm.value.description
     }
     //new trash function rhega like  UpdateExistingNote usme sirf note id pass krna  "NotesId: this.cardUpdateForm.value.notesId"
     this.noteService.UpdateExistingNote(reqPayload).subscribe((response: any) => {
