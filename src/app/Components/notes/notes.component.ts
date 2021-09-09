@@ -9,7 +9,7 @@ import { DialogContentComponent } from '../dialog-content/dialog-content.compone
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  iconVisible: any
+ 
   @Input() allNotes: any = [];
 
   constructor(public note: NotesService, private mate: MatDialog) { }

@@ -21,4 +21,8 @@ export class NotesService {
   UpdateExistingNote(data: any) {
     return this.http.UpdateNote(data);
   }
+  //delete Notes
+  trashNote(data: any) {
+    return this.http.TrashNote(data);
+  }
 }

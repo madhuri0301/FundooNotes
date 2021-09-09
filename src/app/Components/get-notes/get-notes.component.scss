@@ -45,7 +45,7 @@
       flex: 1 0 auto;
      display: flex;
      flex-direction: row;
-     //color: adjust-color($color: #000000, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 1.0);
+    //  color: adjust-color($color: #000000, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 1.0);
   }
   .close-note:hover{
       background-color: rgb(233, 233, 233);
@@ -116,6 +116,7 @@
       opacity: 1;
       position: relative;
       max-width: 600px;
+      
   }
   .title-in{    
       display: flex;

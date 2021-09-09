@@ -11,6 +11,8 @@ import { NotesService } from 'src/app/services/notes.service';
 export class DialogContentComponent implements OnInit {
   cardUpdateForm!: FormGroup;
 
+
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
   private formBuilder: FormBuilder,
   private noteService: NotesService) { }
@@ -32,6 +34,24 @@ export class DialogContentComponent implements OnInit {
     //new trash function rhega like  UpdateExistingNote usme sirf note id pass krna  "NotesId: this.cardUpdateForm.value.notesId"
     this.noteService.UpdateExistingNote(reqPayload).subscribe((response: any) => {
       console.log(response);
+      // this.op = response.data;
+      // this.op.reverse();
+      // window.location.reload();
+      // this.updateNote.(this.op);
+    })
+  }
+  TrashNote(data: any) {
+    console.log(this.data.id);
+    let reqPayload = {
+      noteIdList: [this.data.id],
+        isDeleted: true
+        
+      
+    }
+    //new trash function rhega like  UpdateExistingNote usme sirf note id pass krna  "NotesId: this.cardUpdateForm.value.notesId"
+    this.noteService.trashNote(reqPayload).subscribe((response: any) => {
+      console.log(response);
+      
       // this.op = response.data;
       // this.op.reverse();
       // window.location.reload();

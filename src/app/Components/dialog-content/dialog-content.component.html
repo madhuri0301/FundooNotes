@@ -36,8 +36,8 @@
         </button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item>
-            <!-- (click)="deleteNote(note.notesId)" -->
-            <p>Delete Note</p>
+           
+            <p (click)="TrashNote(data)">Delete Note</p>
           </button>
           <button mat-menu-item disabled>
             <p>Add Label</p>
