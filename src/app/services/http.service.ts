@@ -65,20 +65,12 @@ export class HttpService {
     }
     return this.http.post(this.BaseUrl + '/notes/updateNotes', data, options);
   }
-    //trash note notes
-  TrashNote(id: any) {
-    console.log(id);
-
-    this.token = localStorage.getItem('Token');
-    let options = {
-      headers: new HttpHeaders({
-        'Authorization': this.token,
-        'Content-Type': 'application/json'
-      })
-    }
-    console.log(options);
-    return this.http.post(this.BaseUrl + '/notes/trashNotes', null, options);
-  } 
+  Delete(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
+    console.log(data, url);
+    let tokenOption = {headers: new HttpHeaders({"Authorization": token})};
+    return this.http.post(url, data, isHeaderRequired && tokenOption)
   }
+}
+
 
 

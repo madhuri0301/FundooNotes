@@ -36,6 +36,7 @@ import { DialogContentComponent } from './Components/dialog-content/dialog-conte
 import { HeaderComponent } from './Components/header/header.component';
 import { LabelsComponent } from './Components/labels/labels.component';
 import { TrashComponent } from './Components/trash/trash.component';
+import { IconsComponent } from './Components/icons/icons.component';
 
 
 
@@ -56,7 +57,8 @@ import { TrashComponent } from './Components/trash/trash.component';
     DialogContentComponent,
     HeaderComponent,
     LabelsComponent,
-    TrashComponent
+    TrashComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,

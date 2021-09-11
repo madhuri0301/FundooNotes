@@ -18,15 +18,16 @@
         <div class="reminder prop" role="button" matTooltip="Remind me" matTooltipClass="prop-tip"
           matTooltipPosition='below'></div>
         <div class="back-img prop" role="button" matTooltip="Add image" matTooltipPosition='below'></div> 
-        <div class="back-color prop"  [matMenuTriggerFor]="menus" role="button" matTooltip="Change color" matTooltipPosition='below'>
+        <div class="back-color prop" role="button" matTooltip="Change color" matTooltipPosition='below'>
          
-         <!-- for updating colours -->
-          <mat-menu #menus="matMenu">
+         <!-- for updating colours    -->
+         <!-- or Later Use -->
+          <!-- <mat-menu #menus="matMenu">
               <button mat-menu-item>
                    
           
               </button>
-            </mat-menu>
+            </mat-menu> -->
            
       </div>
       <!-- [card]="note" -->
@@ -37,7 +38,7 @@
         <mat-menu #menu="matMenu">
           <button mat-menu-item>
            
-            <p (click)="TrashNote(data)">Delete Note</p>
+            <p >Delete Note</p>
           </button>
           <button mat-menu-item disabled>
             <p>Add Label</p>

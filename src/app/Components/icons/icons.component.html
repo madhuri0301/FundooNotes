@@ -1,0 +1,52 @@
+<div class="container">
+    <div  class="container">
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/bellicon.svg" alt="">
+            </button>
+        </div>
+    
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/addimg.svg" alt="">
+            </button>
+        </div>
+    
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/colourpallete.svg" alt="">
+            </button>
+        </div>
+    
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/img.svg" alt="">
+            </button>
+        </div>
+    
+        <div class="icons">
+            <button class="buttons">
+                <img class="icon" src="assets/archive.svg" alt="">
+            </button>
+        </div>
+    
+        
+     
+        <div class="icons">
+            <button class="menu-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon>more_vert</mat-icon>
+             </button>
+        </div> 
+        
+          <mat-menu #menu="matMenu">
+    
+            <button mat-menu-item >
+              <span class="deleteButton" mat-stroked-button  (click) = "delete()">Delete note</span>
+            </button>
+    
+          </mat-menu>
+    </div>
+    
+   
+      
+</div>
