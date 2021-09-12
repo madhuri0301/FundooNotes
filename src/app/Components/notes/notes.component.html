@@ -1,8 +1,7 @@
 <div class="note-container" *ngFor="let note of allNotes;">
-    <mat-card class="card" ng-class="" [ngStyle]="{'background': '#'.concat(note.color) }">
+    <mat-card class="card" ng-class="" >
         <div (click)="openDialog(note)" class="mainBlock">
-            <div id="title" #title contenteditable="false" aria-multiline="true" role="textbox" class="font n1"
-                dir="ltr">
+            <div>
                 <strong>{{note.title}}</strong>
             </div>
             <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
@@ -11,9 +10,14 @@
 
         </div>
 
-        <div>
-             <app-icons [noteId]="note.id"></app-icons>
+        <div class="icon">
+            <app-icons [noteId]="note.id"></app-icons>
         </div>
 
+        <!-- <div>
+            <app-take-note (messageEvent)="autoRefresh($event)"></app-take-note>
+            <app-get-all-notes class="note-container" [notes]="allnotes" (messageEvent)="autoRefresh($event)">
+            </app-get-all-notes>
+        </div> -->
     </mat-card>
 </div>

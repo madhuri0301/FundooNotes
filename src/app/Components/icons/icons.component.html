@@ -13,9 +13,12 @@
         </div>
     
         <div class="icons">
-            <button class="buttons">
+            <button class="buttons" matTooltip="Change colour" [matMenuTriggerFor]="aboveMenu">
                 <img class="icon" src="assets/colourpallete.svg" alt="">
             </button>
+            <mat-menu  #aboveMenu="matMenu" yPosition="above">    
+                <app-colourpallet (ItemEvent)="receiveColorCode($event)"></app-colourpallet>
+            </mat-menu>
         </div>
     
         <div class="icons">

@@ -1,0 +1,26 @@
+// span {
+//     margin-left: 33px;
+// }
+  
+// .first-row {
+//     display: flex;
+// }
+  
+.color {
+    height: 35px;
+    width: 1px;
+    border-radius: 20px/20px;
+}
+  
+.color-icon {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-around;
+    // height: 14vh;
+}
+
+.menuRow{
+    display: flex;
+    // flex-direction: row;
+    align-items: center;
+}

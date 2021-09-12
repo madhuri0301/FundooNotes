@@ -42,4 +42,7 @@ export class NotesService {
   trashNotes = (token: any) => {
     return this.http.Trash(`${this.url}/notes/getTrashNotesList`, true, token)
   }
+  changeColor = (dataColor: any, token: any) => {
+    return this.http.Color(`${this.url}notes/changesColorNotes`, dataColor, true, token)
+  }
 }

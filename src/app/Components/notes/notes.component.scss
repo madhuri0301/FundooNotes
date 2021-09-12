@@ -20,8 +20,14 @@
   }
   .card:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
   }
-  
+  .icon{
+    visibility: hidden;
+  }
+  .card:hover .icon{
+    visibility: visible;
+  }
   .bgred{
     background-color: #e75454;
   }
@@ -80,3 +86,4 @@
   .my-button:hover {
     background-color: rgba(153, 147, 147, 0.5);
   }
+ 

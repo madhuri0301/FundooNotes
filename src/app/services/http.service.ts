@@ -75,6 +75,11 @@ export class HttpService {
     let Options = {headers: new HttpHeaders({"Authorization": token})};
     return this.http.get(url, isHeaderRequired && Options)
   }
+  Color(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
+    console.log(data, url);
+    let options = {headers: new HttpHeaders({"Authorization": token})};
+    return this.http.post(url, data, isHeaderRequired && options)
+  }
 }
 
 

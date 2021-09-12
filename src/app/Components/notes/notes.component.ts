@@ -32,5 +32,9 @@ export class NotesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe()
   }
-
+  autoRefresh(value: any)
+  {
+    console.log(value);
+    this.allNotes();
+  }
 }

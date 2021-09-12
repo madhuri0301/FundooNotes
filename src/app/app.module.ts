@@ -37,6 +37,7 @@ import { HeaderComponent } from './Components/header/header.component';
 import { LabelsComponent } from './Components/labels/labels.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { IconsComponent } from './Components/icons/icons.component';
+import { ColourpalletComponent } from './Components/colourpallet/colourpallet.component';
 
 
 
@@ -58,7 +59,8 @@ import { IconsComponent } from './Components/icons/icons.component';
     HeaderComponent,
     LabelsComponent,
     TrashComponent,
-    IconsComponent
+    IconsComponent,
+    ColourpalletComponent
   ],
   imports: [
     BrowserModule,
