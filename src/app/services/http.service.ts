@@ -29,10 +29,10 @@ export class HttpService {
   //   return this.http.post(this.BaseUrl + url, data);
   // }
   //
-  Get(url: any, data: any, token: any, headers: boolean)
-  {
-    return this.http.get(this.BaseUrl + url, data);
-  }
+  // Get(url: any, data: any, token: any, headers: boolean)
+  // {
+  //   return this.http.get(this.BaseUrl + url, data);
+  // }
   Put(url: any, data: any, token: any, headers: boolean)
   {
     return this.http.put(this.BaseUrl + url, data);
@@ -67,8 +67,13 @@ export class HttpService {
   }
   Delete(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
     console.log(data, url);
-    let tokenOption = {headers: new HttpHeaders({"Authorization": token})};
-    return this.http.post(url, data, isHeaderRequired && tokenOption)
+    let options = {headers: new HttpHeaders({"Authorization": token})};
+    return this.http.post(url, data, isHeaderRequired && options)
+  }
+  Trash(url: string, isHeaderRequired: any = false, token: any = null) {  
+    console.log("data Get");
+    let Options = {headers: new HttpHeaders({"Authorization": token})};
+    return this.http.get(url, isHeaderRequired && Options)
   }
 }
 

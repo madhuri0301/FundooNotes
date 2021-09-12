@@ -32,11 +32,14 @@ export class NotesService {
   }
   //delete Notes
   deleteNotes = (userData: any, token: any) => {
-    return this.http.Delete(`${this.url}notes/trashNotes`, userData, true, token)
+    return this.http.Delete(`${this.url}/notes/trashNotes`, userData, true, token)
     .pipe(
       tap(() => {
         this.refresh.next();
       })
     );
+  }
+  trashNotes = (token: any) => {
+    return this.http.Trash(`${this.url}/notes/getTrashNotesList`, true, token)
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NotesService } from 'src/app/services/notes.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,7 +12,7 @@ export class GetNotesComponent implements OnInit {
   token: any;
   isTrash = true
   notesArray: any = []
-  // @Input() noteArray: any = []
+  // @Input() notes: any = []
 
   constructor(private note: NotesService, private activeRoute: ActivatedRoute) { }
 

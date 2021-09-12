@@ -9,7 +9,7 @@ import { NotesService } from 'src/app/services/notes.service';
 export class IconsComponent implements OnInit {
   @Input() noteId:any;
 
-  token_Id = localStorage.getItem('token');
+  token_Id = localStorage.getItem('Token');
 
   constructor(public note: NotesService) { }
 

@@ -11,10 +11,19 @@ import { DialogContentComponent } from '../dialog-content/dialog-content.compone
 export class NotesComponent implements OnInit {
  
   @Input() allNotes: any = [];
+  tokenId = localStorage.getItem("Token");
 
   constructor(public note: NotesService, private mate: MatDialog) { }
 
   ngOnInit(): void {
+    this.note.GetAllNotes( this.tokenId).subscribe((userData:any) => {
+
+      this.allNotes=userData['data'].data
+      this.allNotes=userData['data'].data.reverse()
+      this.allNotes=this.allNotes.filter((noteData:any)=>{
+       return noteData.isDeleted === false ;
+      });
+    })
   }
   openDialog(note: any) {
     let dialogRef = this.mate.open(DialogContentComponent, {
