@@ -23,9 +23,12 @@ export class GetNotesComponent implements OnInit {
   GetAllNotes() {
     this.note.GetAllNotes('Notes').subscribe((response: any) => {
       console.log(response);
-      this.notesArray = response.data.data;
-      this.notesArray.reverse();
-      console.log(this.notesArray);
+      let notesArr = response.data.data;
+      notesArr.reverse();
+      console.log(notesArr);
+      this.notesArray=notesArr.filter((noteData:any)=>{
+        return noteData.isDeleted === false ;
+       });
 
     })
   }

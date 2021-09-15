@@ -7,6 +7,8 @@ import { NotesService } from 'src/app/services/notes.service';
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
+
+  // @Input() allNotes: any = [];
   // @Input() notes: any = [];
   notes:any=[];
   
@@ -23,7 +25,7 @@ export class TrashComponent implements OnInit {
     console.log("Getting trash")
     this.noteService.trashNotes( this.token_Id).subscribe((data:any)=>{
       console.log(data);
-      this.notes= data.data; 
+      this.notes= data.data.data; 
       console.log(this.notes);
     })
   }

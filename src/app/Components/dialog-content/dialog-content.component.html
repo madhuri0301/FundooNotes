@@ -13,13 +13,13 @@
   </form>
   <mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between center">
     <div class="card-bottom" id="bottom">
-      <div class="note-prop">
+      <!-- <div class="note-prop"> -->
         
-        <div class="reminder prop" role="button" matTooltip="Remind me" matTooltipClass="prop-tip"
+        <!-- <div class="reminder prop" role="button" matTooltip="Remind me" matTooltipClass="prop-tip"
           matTooltipPosition='below'></div>
         <div class="back-img prop" role="button" matTooltip="Add image" matTooltipPosition='below'></div> 
         <div class="back-color prop" role="button" matTooltip="Change color" matTooltipPosition='below'>
-         
+          -->
          <!-- for updating colours    -->
          <!-- or Later Use -->
           <!-- <mat-menu #menus="matMenu">
@@ -28,28 +28,29 @@
           
               </button>
             </mat-menu> -->
+            <app-icons class="app-icons"></app-icons>
            
-      </div>
+      <!-- </div> -->
       <!-- [card]="note" -->
-        <div  class="archive prop"  role="button" matTooltip="Archive" matTooltipPosition='below'></div>
+        <!-- <div  class="archive prop"  role="button" matTooltip="Archive" matTooltipPosition='below'></div>
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon class="iconpadd">more_vert</mat-icon>
         </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item>
+        <mat-menu #menu="matMenu">-->
+          <!-- <button mat-menu-item> 
            
             <p >Delete Note</p>
           </button>
           <button mat-menu-item disabled>
             <p>Add Label</p>
-          </button>
+          </button> -->
           
-        </mat-menu>
-        <p class="button" style="padding-left: 150px ;"> <button  mat-button   mat-dialog-close (click)="updateNote(data.notesId)" >Close</button></p>
+        <!-- </mat-menu> -->
+        <p class="button" style="padding-left: 150px ;margin-top: 35px;"> <button  mat-button   mat-dialog-close (click)="updateNote(data.notesId)" >Close</button></p>
         <!--<div class="">  -->
         <!-- Templete statements -->
       </div>
-    </div>
+    <!-- </div> -->
     <!-- (click)="updateNote(data)" -->
    
   </mat-dialog-actions>

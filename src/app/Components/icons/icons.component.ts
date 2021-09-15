@@ -11,9 +11,10 @@ export class IconsComponent implements OnInit {
 
   @Output() transColor:EventEmitter<string> = new EventEmitter<string>();
 
-  isColor:string=''
+  isColor:string='';
 
   token_Id = localStorage.getItem('Token');
+  op: any;
 
   constructor(public note: NotesService) { }
 
@@ -21,12 +22,11 @@ export class IconsComponent implements OnInit {
   }
   
   receiveColorCode = ($isColor:string) =>{
-    console.log("icon " + $isColor);
+    console.log("icons " + $isColor);
     this.isColor = $isColor;
     console.log("singleIcon " + this.isColor)
     this.transColor.emit(this.isColor)
   }
-
     delete(){
       console.log(this.noteId);
       //alert(this.token_Id)

@@ -13,17 +13,25 @@ export class NotesComponent implements OnInit {
   @Input() allNotes: any = [];
   tokenId = localStorage.getItem("Token");
 
+  colorData:string=''
+
+  
+
   constructor(public note: NotesService, private mate: MatDialog) { }
 
   ngOnInit(): void {
-    this.note.GetAllNotes( this.tokenId).subscribe((userData:any) => {
+    // this.note.GetAllNotes( this.tokenId).subscribe((userData:any) => {
 
-      this.allNotes=userData['data'].data
-      this.allNotes=userData['data'].data.reverse()
-      this.allNotes=this.allNotes.filter((noteData:any)=>{
-       return noteData.isDeleted === false ;
-      });
-    })
+  //     this.allNotes=userData['data'].data
+  //     this.allNotes=userData['data'].data.reverse()
+  //     this.allNotes=this.allNotes.filter((noteData:any)=>{
+  //      return noteData.isDeleted === false ;
+  //     });
+  //   })
+  }
+  receiveToUpdate=($colorData:string) => {
+    this.colorData = $colorData;
+    console.log("display " + this.colorData) 
   }
   openDialog(note: any) {
     let dialogRef = this.mate.open(DialogContentComponent, {
@@ -32,9 +40,9 @@ export class NotesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe()
   }
-  autoRefresh(value: any)
-  {
-    console.log(value);
-    this.allNotes();
-  }
+//   autoRefresh(value: any)
+//   {
+//     console.log(value);
+//     this.allNotes();
+//   }
 }

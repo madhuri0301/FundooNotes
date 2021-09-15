@@ -10,7 +10,9 @@ import { NotesService } from 'src/app/services/notes.service';
 })
 export class DialogContentComponent implements OnInit {
   cardUpdateForm!: FormGroup;
+  colorUpdate: any;
 
+  tokenId = localStorage.getItem("Token");
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
@@ -21,15 +23,28 @@ export class DialogContentComponent implements OnInit {
     this.cardUpdateForm = this.formBuilder.group({
       noteId: this.data.noteId,
       title: this.data.title,
-      color: this.data.color,
+      colorUpdate: this.data.colorUpdate,
       description: this.data.description
+    })
+  }
+  receiveIconColorUpdate=($colorData:string) => {
+    this.colorUpdate = $colorData;
+    console.log("update " + this.colorUpdate)
+
+    let data={
+      color: this.colorUpdate,
+      noteIdList:[this.data.noteId]
+    }
+    this.noteService.changeColor(data,this.tokenId).subscribe((data) => {
+      console.log("color changed ", data);
     })
   }
   updateNote(data: any) {
     let reqPayload = {
       noteId: this.data.id,
       title: this.cardUpdateForm.value.title,
-      description: this.cardUpdateForm.value.description
+      description: this.cardUpdateForm.value.description,
+      color: this.colorUpdate
     }
     //new trash function rhega like  UpdateExistingNote usme sirf note id pass krna  "NotesId: this.cardUpdateForm.value.notesId"
     this.noteService.UpdateExistingNote(reqPayload).subscribe((response: any) => {
@@ -40,5 +55,5 @@ export class DialogContentComponent implements OnInit {
       // this.updateNote.(this.op);
     })
   }
-  }
+}
 

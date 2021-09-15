@@ -65,22 +65,43 @@ export class HttpService {
     }
     return this.http.post(this.BaseUrl + '/notes/updateNotes', data, options);
   }
+
+  //Delete Notes
   Delete(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
     console.log(data, url);
     let options = {headers: new HttpHeaders({"Authorization": token})};
     return this.http.post(url, data, isHeaderRequired && options)
   }
+
+  //collect those deleted notes
   Trash(url: string, isHeaderRequired: any = false, token: any = null) {  
     console.log("data Get");
     let Options = {headers: new HttpHeaders({"Authorization": token})};
     return this.http.get(url, isHeaderRequired && Options)
   }
+
+  //coloring notes
   Color(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
     console.log(data, url);
     let options = {headers: new HttpHeaders({"Authorization": token})};
     return this.http.post(url, data, isHeaderRequired && options)
   }
-}
+
+// UpdateColor(data: any) {
+//   console.log(data)
+//   const id = data.NoteId;
+//   const color = data.color;
+
+//   let token = localStorage.getItem('Token');
+//   let options = {
+//     headers: new HttpHeaders({
+//       'Authorization': this.token,
+//       'Content-Type': 'application/json'
+//     })
+//   }
+//   return this.http.post(this.BaseUrl + '/notes/changesColorNotes', data, options);
+// }
+ }
 
 
 

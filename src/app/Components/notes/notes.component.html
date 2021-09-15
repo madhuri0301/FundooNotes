@@ -1,17 +1,18 @@
 <div class="note-container" *ngFor="let note of allNotes;">
-    <mat-card class="card" ng-class="" >
-        <div (click)="openDialog(note)" class="mainBlock">
-            <div>
+    <mat-card class="card" ng-class="" [style.background-color]="note.color" [style.background-color] = "colorData"> 
+        <div (click)="openDialog(note)" class="mainBlock" [style.background-color]="note.color">
+            <div [style.background-color] = "colorData" >
                 <strong>{{note.title}}</strong>
             </div>
             <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
-                class="font n1" dir="ltr">{{note.description}}</div>
+                class="font n1" dir="ltr" [style.background-color] = "colorData" >{{note.description}}</div>
             <!-- [hidden]="!iconVisible" -->
 
         </div>
 
         <div class="icon">
-            <app-icons [noteId]="note.id"></app-icons>
+            <!-- <app-icons [noteId]="note.id"></app-icons> -->
+            <app-icons [style.background-color] = "colorData" class="icon" (transColor)="receiveToUpdate($event)" [noteId]="note.id" ></app-icons>  
         </div>
 
         <!-- <div>
