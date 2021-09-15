@@ -24,11 +24,11 @@ export class HttpService {
     return this.http.post(this.BaseUrl + url, data,options);
   }
   // to redirect
-  // postt(url: any, data: any, token: any, headers: boolean)
-  // {
-  //   return this.http.post(this.BaseUrl + url, data);
-  // }
-  //
+  postt(url: any, data: any, token: any, headers: boolean)
+  {
+    return this.http.post(this.BaseUrl + url, data);
+  }
+  
   // Get(url: any, data: any, token: any, headers: boolean)
   // {
   //   return this.http.get(this.BaseUrl + url, data);

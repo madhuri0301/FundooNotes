@@ -13,7 +13,7 @@ export class NotesComponent implements OnInit {
   @Input() allNotes: any = [];
   tokenId = localStorage.getItem("Token");
 
-  colorData:string=''
+  colorData:string='';
 
   
 

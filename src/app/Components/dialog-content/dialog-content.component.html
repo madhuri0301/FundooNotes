@@ -1,5 +1,5 @@
-<form [formGroup]="cardUpdateForm">
-    <div class="notesTitle" fxLayout="row" fxLayoutAlign="space-between center">
+<form [formGroup]="cardUpdateForm" >
+    <div class="notesTitle" fxLayout="row" fxLayoutAlign="space-between center" [style.background-color] = "colorData" >
       <input  class="boreder"mat-dialog-title formControlName="title" placeholder="Title" value="{{data.title}}" />
       <div class="container" fxlayoutAlign="center center">
         <mat-icon class="my-button pinBtn" [class.clicked]="true">push_pin</mat-icon>
@@ -7,12 +7,12 @@
     </div>
    
     <div>
-      <input mat-dialog-title formControlName="description" placeholder="description" value="{{data.description}}" />
+      <input mat-dialog-title formControlName="description" placeholder="description" value="{{data.description}}" [style.background-color] = "colorData" />
     </div>
   
   </form>
   <mat-dialog-actions fxLayout="row" fxLayoutAlign="space-between center">
-    <div class="card-bottom" id="bottom">
+    <div class="card-bottom" id="bottom" >
       <!-- <div class="note-prop"> -->
         
         <!-- <div class="reminder prop" role="button" matTooltip="Remind me" matTooltipClass="prop-tip"
@@ -28,7 +28,7 @@
           
               </button>
             </mat-menu> -->
-            <app-icons class="app-icons"></app-icons>
+            <app-icons (transColor)="receiveIconColorUpdate($event)"></app-icons>
            
       <!-- </div> -->
       <!-- [card]="note" -->

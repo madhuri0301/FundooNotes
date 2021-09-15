@@ -11,9 +11,14 @@ export class UserService {
     console.log("given data is", data);
     return this.httpService.Post("/user/userSignUp", data, null, false);
   }
+  // login(data: any) {
+  //   console.log("given data is", data);
+  //   return this.httpService.Post("/user/login", data, null, false);
+  // }
+
   login(data: any) {
     console.log("given data is", data);
-    return this.httpService.Post("/user/login", data, null, false);
+    return this.httpService.postt("/user/login", data, null, false);
   }
   forgetpassword(data : any){
     console.log("given data is", data);

@@ -12,6 +12,7 @@ export class GetNotesComponent implements OnInit {
   token: any;
   isTrash = true
   notesArray: any = []
+
   // @Input() notes: any = []
 
   constructor(private note: NotesService, private activeRoute: ActivatedRoute) { }
@@ -32,6 +33,7 @@ export class GetNotesComponent implements OnInit {
 
     })
   }
+
 
   refreshNotes(value:any ){
     console.log(value);

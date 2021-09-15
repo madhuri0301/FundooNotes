@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, OnDestroy } from '@angular/core';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnDestroy,OnInit {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
-  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,private routers: Router,) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
 
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -26,5 +26,6 @@ export class HeaderComponent implements OnDestroy,OnInit {
 
   ngOnInit(): void {
   }
+
 
 }

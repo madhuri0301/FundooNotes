@@ -11,6 +11,9 @@ import { NotesService } from 'src/app/services/notes.service';
 export class DialogContentComponent implements OnInit {
   cardUpdateForm!: FormGroup;
   colorUpdate: any;
+  colorData:string='';
+  // noteId:any;
+  
 
   tokenId = localStorage.getItem("Token");
 
@@ -26,6 +29,7 @@ export class DialogContentComponent implements OnInit {
       colorUpdate: this.data.colorUpdate,
       description: this.data.description
     })
+    console.log(this.data);
   }
   receiveIconColorUpdate=($colorData:string) => {
     this.colorUpdate = $colorData;
@@ -33,8 +37,9 @@ export class DialogContentComponent implements OnInit {
 
     let data={
       color: this.colorUpdate,
-      noteIdList:[this.data.noteId]
+      noteIdList:[this.data.id]
     }
+    console.log(data);
     this.noteService.changeColor(data,this.tokenId).subscribe((data) => {
       console.log("color changed ", data);
     })
