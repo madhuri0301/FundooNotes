@@ -26,6 +26,10 @@ export class HeaderComponent implements OnDestroy,OnInit {
 
   ngOnInit(): void {
   }
-
+  logout() {
+    sessionStorage.clear();
+    localStorage.clear();
+    this.routers.navigateByUrl('login');
+  }
 
 }
