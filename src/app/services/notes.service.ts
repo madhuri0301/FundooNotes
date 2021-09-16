@@ -49,11 +49,14 @@ export class NotesService {
   //   return this.http.UpdateColor(data);
   // }
   archivedNotes = (userData : any, token: any) => {
-    return this.http.Archive(`${this.url}notes/archiveNotes`, userData, true, token)
+    return this.http.Archive(`${this.url}/notes/archiveNotes`, userData, true, token)
     .pipe(
       tap(() => {
         this.refresh.next();
       })
     );
+  }
+  getArchieveNotes = (token: any) => {
+    return this.http.getArchive(`${this.url}/notes/getArchiveNotesList`, true, token)
   }
 }
