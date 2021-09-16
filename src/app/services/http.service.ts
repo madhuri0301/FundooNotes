@@ -101,7 +101,13 @@ export class HttpService {
 //   }
 //   return this.http.post(this.BaseUrl + '/notes/changesColorNotes', data, options);
 // }
- }
+ 
+ Archive(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
+  console.log(data, url);
+  let options = {headers: new HttpHeaders({"Authorization": token})};
+  return this.http.post(url, data, isHeaderRequired && options)
+}
+}
 
 
 

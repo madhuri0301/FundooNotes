@@ -10,6 +10,7 @@ import { ReminderComponent } from './Components/reminder/reminder.component';
 import { LabelsComponent } from './Components/labels/labels.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
       { path: 'notes', component: GetNotesComponent },
       { path: 'reminder', component: ReminderComponent},
       {path : 'labels', component: LabelsComponent},
+      {path: 'archive',component: ArchiveComponent},
       {path: 'trash',component: TrashComponent}
 
     ]

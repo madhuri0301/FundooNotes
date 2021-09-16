@@ -38,6 +38,7 @@ import { LabelsComponent } from './Components/labels/labels.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { IconsComponent } from './Components/icons/icons.component';
 import { ColourpalletComponent } from './Components/colourpallet/colourpallet.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
 
 
 
@@ -60,7 +61,8 @@ import { ColourpalletComponent } from './Components/colourpallet/colourpallet.co
     LabelsComponent,
     TrashComponent,
     IconsComponent,
-    ColourpalletComponent
+    ColourpalletComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,

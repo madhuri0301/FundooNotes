@@ -48,4 +48,12 @@ export class NotesService {
   // updateColor(data: any) {
   //   return this.http.UpdateColor(data);
   // }
+  archivedNotes = (userData : any, token: any) => {
+    return this.http.Archive(`${this.url}notes/archiveNotes`, userData, true, token)
+    .pipe(
+      tap(() => {
+        this.refresh.next();
+      })
+    );
+  }
 }

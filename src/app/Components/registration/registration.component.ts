@@ -38,6 +38,9 @@ export class RegistrationComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
+  fontcolors=['color:blue','color:red','color:#orange','color:blue','color:green','color:red'];
+  fonttexts=['F','u','n','d','o','o'];
+
   onSubmit() {
     console.log("onSubmit method is calling",this.registerForm.value)
     if (this.registerForm.invalid) {
