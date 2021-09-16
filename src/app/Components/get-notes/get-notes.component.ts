@@ -33,7 +33,7 @@ export class GetNotesComponent implements OnInit {
       //   this.notesArray=notesArr.filter((noteData:any)=>{
       //   return noteData.isArchived === false ;
       // }); 
-    
+    console.log(this.notesArray);
     })
   
   }

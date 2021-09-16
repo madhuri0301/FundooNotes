@@ -11,6 +11,7 @@ export class ArchiveComponent implements OnInit {
   notes:any=[];
 
   token_Id = localStorage.getItem('Token');
+  notesArray: any;
 
   constructor(private noteService: NotesService) { }
 
@@ -22,6 +23,10 @@ export class ArchiveComponent implements OnInit {
     console.log("getting archive")
     this.archieveNote=this.noteService.getArchieveNotes(this.token_Id).subscribe((data:any)=>{
       this.notes=data['data'].data 
+      // this.notes=this.archieveNote
+      console.log(data);
+
+      
     })
   }
 }

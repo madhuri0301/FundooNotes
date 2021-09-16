@@ -14,6 +14,7 @@ export class TrashComponent implements OnInit {
   
   
   token_Id = localStorage.getItem('Token');
+  notesArray: any;
 
   constructor(private noteService: NotesService) { }
 
