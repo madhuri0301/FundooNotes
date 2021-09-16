@@ -1,55 +1,64 @@
 <div class="container">
-    <div  class="container">
+    <div *ngIf="!isTrashComponent" class="container">
         <div class="icons">
             <button class="buttons">
                 <img class="icon" src="assets/bellicon.svg" alt="">
             </button>
         </div>
-    
+
         <div class="icons">
             <button class="buttons">
                 <img class="icon" src="assets/addimg.svg" alt="">
             </button>
         </div>
-    
+
         <div class="icons">
             <button class="buttons" matTooltip="Change colour" [matMenuTriggerFor]="aboveMenu">
                 <img class="icon" src="assets/colourpallete.svg" alt="">
             </button>
-            <mat-menu  #aboveMenu="matMenu" yPosition="above">    
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
                 <app-colourpallet (ItemEvent)="receiveColorCode($event)"></app-colourpallet>
             </mat-menu>
         </div>
-    
+
         <div class="icons">
             <button class="buttons">
                 <img class="icon" src="assets/img.svg" alt="">
             </button>
         </div>
-    
+
         <div class="icons">
-            <button class="buttons">
+            <button class="buttons" matTooltip="archive" (click)="archive">
                 <img class="icon" src="assets/archive.svg" alt="">
             </button>
         </div>
-    
-        
-     
+
+
+
         <div class="icons">
-            <button class="menu-icon" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <button class="menu-icon" mat-icon-button [matMenuTriggerFor]="menu"
+                aria-label="Example icon-button with a menu">
                 <mat-icon>more_vert</mat-icon>
-             </button>
-        </div> 
-        
-          <mat-menu #menu="matMenu">
-    
-            <button mat-menu-item >
-              <span class="deleteButton" mat-stroked-button  (click) = "delete()">Delete note</span>
             </button>
-    
-          </mat-menu>
+        </div>
+
+        <mat-menu #menu="matMenu">
+
+            <button mat-menu-item>
+                <span class="deleteButton" mat-stroked-button (click)="delete()">Delete note</span>
+            </button>
+
+        </mat-menu>
+
     </div>
-    
-   
-      
+
+    <div *ngIf="isTrashComponent"   fxLayout="row">
+        <div class="buttons"  (click)="delete()" matTooltip="Delete forever" >
+            <img class="icons" src="assets/crossdelete.svg" alt="">
+        </div>
+
+        <div class="buttons" matTooltip="Restore">
+            <img class="icons" src="assets/deletearrow.svg" alt="">
+        </div>
+    </div>
 </div>

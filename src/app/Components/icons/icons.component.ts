@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NotesService } from 'src/app/services/notes.service';
+import { ArchiveComponent } from '../archive/archive.component';
+import { NotesComponent } from '../notes/notes.component';
+import { TrashComponent } from '../trash/trash.component';
 
 @Component({
   selector: 'app-icons',
@@ -16,9 +20,27 @@ export class IconsComponent implements OnInit {
   token_Id = localStorage.getItem('Token');
   op: any;
 
-  constructor(public note: NotesService) { }
+  isNotesComponent: boolean = false;
+  isTrashComponent: boolean = false;
+  isArchiveComponent: boolean = false;
+
+  constructor(public note: NotesService, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    let comp = this.route.snapshot.component;
+    if (comp == NotesComponent) {
+      this.isNotesComponent = true;
+    }
+
+    if (comp == TrashComponent) {
+      this.isTrashComponent = true;
+      console.log(this.isTrashComponent);
+    }
+    if (comp == ArchiveComponent) {
+      this.isArchiveComponent = true;
+      console.log(this.isArchiveComponent);
+    }
+
   }
   
   receiveColorCode = ($isColor:string) =>{
@@ -32,11 +54,22 @@ export class IconsComponent implements OnInit {
       //alert(this.token_Id)
       let data = {
         noteIdList:[this.noteId],
-        isDeleted:true
+        isDeleted:true,
       }
       this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
         console.log("Deleted Successfully", data);
       });
+  }
+  archive() {
+    console.log(this.noteId)
+    let dataArchive = {
+      noteIdList:[this.noteId],   
+      "isArchived": true,    
+    }
+    console.log("note and boolean ", dataArchive);
+    this.note.archivedNotes(dataArchive, this.token_Id).subscribe((dataArchive)=>{
+      console.log("Archieve Successfully", dataArchive);
+    });
   }
 
 }
