@@ -28,7 +28,7 @@ export class GetNotesComponent implements OnInit {
       notesArr.reverse();
       console.log(notesArr);
       this.notesArray=notesArr.filter((noteData:any)=>{
-        return noteData.isDeleted === false ;
+        return noteData.isDeleted === false && noteData.isArchived === false;
        });
       //   this.notesArray=notesArr.filter((noteData:any)=>{
       //   return noteData.isArchived === false ;

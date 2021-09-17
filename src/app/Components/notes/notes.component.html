@@ -1,4 +1,4 @@
-<div class="note-container" *ngFor="let note of allNotes;" >
+<div class="note-container" *ngFor="let note of allNotes;"  >
     <mat-card class="card" ng-class="" [style.background-color]="note.color" > 
         <div (click)="openDialog(note)" class="mainBlock" [style.background-color]="note.color">
             <div [style.background-color] = "colorData" >
