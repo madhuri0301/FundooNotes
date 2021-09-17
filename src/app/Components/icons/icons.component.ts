@@ -54,7 +54,7 @@ export class IconsComponent implements OnInit {
       //alert(this.token_Id)
       let data = {
         noteIdList:[this.noteId],
-        isDeleted:true,
+        isDeleted:true
       }
       this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
         console.log("Deleted Successfully", data);

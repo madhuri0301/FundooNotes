@@ -22,8 +22,18 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
   }
+  .buttons{
+    background-color: transparent;
+    border: none;
+    margin-left: 37px;
+    margin-bottom: 10px;
+  
+    // display: flex;
+    // justify-content: flex-end;
+  }
   .icon{
     visibility: hidden;
+    
   }
   .card:hover .icon{
     visibility: visible;
