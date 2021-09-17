@@ -60,6 +60,28 @@ export class IconsComponent implements OnInit {
         console.log("Deleted Successfully", data);
       });
   }
+  restore(){
+    console.log(this.noteId);
+    //alert(this.token_Id)
+    let data = {
+      noteIdList:[this.noteId],
+      isDeleted:false
+    }
+    this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
+      console.log("restore Successfully", data);
+    });
+  }
+  permanent_delete(){
+    console.log(this.noteId);
+    //alert(this.token_Id)
+    let data = {
+      noteIdList:[this.noteId],
+      isDeleted:false
+    }
+    this.note.deleteForever(data, this.token_Id).subscribe((data)=>{
+      console.log("parmanent Deleted Successfully", data);
+    });
+}
   archive() {
     console.log(this.noteId)
     let dataArchive = {

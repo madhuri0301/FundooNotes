@@ -59,4 +59,7 @@ export class NotesService {
   getArchieveNotes = (token: any) => {
     return this.http.getArchive(`${this.url}/notes/getArchiveNotesList`, true, token)
   }
+  deleteForever(data: any, token: any){
+    return this.http.Delete(`${this.url}/notes/deleteForeverNotes`, data,true, token);
+  }
 }

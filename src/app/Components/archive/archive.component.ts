@@ -18,6 +18,8 @@ export class ArchiveComponent implements OnInit {
   ngOnInit(): void {
     this.getArchieve();
     this.noteService.getRefreshedData().subscribe(() => this.getArchieve());
+  
+
   }
   getArchieve(){
     console.log("getting archive")
@@ -25,8 +27,6 @@ export class ArchiveComponent implements OnInit {
       this.notes=data['data'].data 
       // this.notes=this.archieveNote
       console.log(data);
-
-      
     })
   }
 }

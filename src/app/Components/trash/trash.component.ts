@@ -11,6 +11,7 @@ export class TrashComponent implements OnInit {
   // @Input() allNotes: any = [];
   // @Input() notes: any = [];
   notes:any=[];
+ 
   
   
   token_Id = localStorage.getItem('Token');

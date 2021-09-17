@@ -1,6 +1,6 @@
 <form [formGroup]="cardUpdateForm" >
     <div class="notesTitle" fxLayout="row" fxLayoutAlign="space-between center" [style.background-color] = "colorData" >
-      <input  class="boreder"mat-dialog-title formControlName="title" placeholder="Title" value="{{data.title}}" />
+      <input  class="boreder"mat-dialog-title formControlName="title" placeholder="Title" value="{{data.title}} {{data.IsDeleted}}"/>
       <div class="container" fxlayoutAlign="center center">
         <mat-icon class="my-button pinBtn" [class.clicked]="true">push_pin</mat-icon>
       </div>
