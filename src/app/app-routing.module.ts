@@ -11,6 +11,7 @@ import { LabelsComponent } from './Components/labels/labels.component';
 import { TrashComponent } from './Components/trash/trash.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
+import { AuthenticationGuard } from './Components/authentication.guard';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: 'forget-password', component: ForgetPasswordComponent},
   {path: 'resetpassword/:token', component: ResetPasswordComponent},
   {
-    path: 'home', component: HeaderComponent,
+    path: 'home', component: HeaderComponent,canActivate :[AuthenticationGuard],
     children: [
   
       { path: '', redirectTo: "notes", pathMatch: "full" },

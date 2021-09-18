@@ -62,4 +62,7 @@ export class NotesService {
   deleteForever(data: any, token: any){
     return this.http.Delete(`${this.url}/notes/deleteForeverNotes`, data,true, token);
   }
+  pinUnpin = (dataColor: any, token: any) => {
+    return this.http.Pin(`${this.url}/notes/pinUnpinNotes`, dataColor, true, token)
+  }
 }

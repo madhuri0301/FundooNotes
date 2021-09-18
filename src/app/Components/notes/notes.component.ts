@@ -45,4 +45,7 @@ export class NotesComponent implements OnInit {
 //     console.log(value);
 //     this.allNotes();
 //   }
+Refresh(event: any) {
+  this.allNotes();
+}
 }

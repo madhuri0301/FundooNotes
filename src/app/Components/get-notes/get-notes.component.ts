@@ -37,11 +37,5 @@ export class GetNotesComponent implements OnInit {
     })
   
   }
-
-
-  refreshNotes(value:any ){
-    console.log(value);
-    this.GetAllNotes();
-  }
  
 }

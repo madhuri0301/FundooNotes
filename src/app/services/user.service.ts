@@ -28,4 +28,10 @@ export class UserService {
     console.log("given data is", data);
     return this.httpService.Post("/user/reset-password", data, null, false);
   }
+  loggedIn(){
+    return !!localStorage.getItem('Token');
+  }
+  logout(){
+    localStorage.removeItem('Token')
+  }
 }

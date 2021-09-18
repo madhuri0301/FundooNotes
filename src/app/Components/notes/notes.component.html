@@ -1,14 +1,11 @@
 <div class="note-container" *ngFor="let note of allNotes;">
-
-
-
     <mat-card class="card" ng-class="" [style.background-color]="note.color">
         <div (click)="openDialog(note)" class="mainBlock" [style.background-color]="note.color">
             <div [style.background-color]="colorData">
-                <strong>{{note.title}}</strong>
+                <strong class="title">{{note.title}}</strong>
                 
 
-                <button class="buttons">
+                <button class="buttons" matTooltip="pin Note">
                     <img class="icon" src="assets/pin.svg" alt="">
                 </button>
 
@@ -28,9 +25,9 @@
         </div>
 
         <!-- <div>
-            <app-take-note (messageEvent)="autoRefresh($event)"></app-take-note>
-            <app-get-all-notes class="note-container" [notes]="allnotes" (messageEvent)="autoRefresh($event)">
-            </app-get-all-notes>
+            <app-take-notes (messageEvent)="Refresh($event)"></app-take-notes>
+            <app-get-notes [notes]="allNotes" (event)="Refresh($event)" fxLayout="row wrap" fxFlex.xs=100
+            fxLayout.xs="column wrap" fxLayoutGap="20px"></app-get-notes>
         </div> -->
     </mat-card>
 </div>

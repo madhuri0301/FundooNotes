@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-// import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { UserService } from 'src/app/services/user.service';
-// import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-login',
@@ -15,12 +16,19 @@ export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
   // setAutoHide:boolean=false;
-  // autoHide: number = 10000;
+  
 
 
 
-  constructor(private formBuilder: FormBuilder, private user: UserService, public route: Router) { }
-
+  constructor(private formBuilder: FormBuilder, private user: UserService, public route: Router,public snackBar: MatSnackBar) { }
+  openSnackBar(message: string, duration: number) {
+    let config = new MatSnackBarConfig();
+    if (duration != 0)
+    {
+      config.duration = duration; 
+    }
+    this.snackBar.open(message, undefined, config);
+  } 
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -53,25 +61,25 @@ export class LoginComponent implements OnInit {
         }
       );
 
-    // this.user.login(reqData).subscribe(
-    //   (response:any)=>{
-    //     localStorage.setItem('Token', response['token']);
-    //     this.openSnackBar('Login success', 2000);
-    //     console.log(response);
-    //   },
-    //   error =>{
-    //     try{
-    //       if(error['status'] == 0){
-    //         this.openSnackBar('Login failed: server offline',2000);
-    //       }
-    //       else{
-    //         this.openSnackBar('Login failed:',2000);
-    //       }
-    //     }
-    //     catch(error){
+    this.user.login(reqData).subscribe(
+      (response:any)=>{
+        localStorage.setItem('Token', response['token']);
+        this.openSnackBar('Login success', 2000);
+        console.log(response);
+      },
+      error =>{
+        try{
+          if(error['status'] == 0){
+            this.openSnackBar('Login failed: server offline',2000);
+          }
+          else{
+            this.openSnackBar('Login failed:',2000);
+          }
+        }
+        catch(error){
 
-    //     }
-    // });
+        }
+    });
 
     //   // display form values on success
     //   alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
