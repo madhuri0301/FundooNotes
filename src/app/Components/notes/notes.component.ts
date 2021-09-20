@@ -33,6 +33,7 @@ export class NotesComponent implements OnInit {
     this.colorData = $colorData;
     console.log("display " + this.colorData) 
   }
+
   openDialog(note: any) {
     let dialogRef = this.mate.open(DialogContentComponent, {
       width: '500px',
@@ -40,12 +41,4 @@ export class NotesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe()
   }
-//   autoRefresh(value: any)
-//   {
-//     console.log(value);
-//     this.allNotes();
-//   }
-Refresh(event: any) {
-  this.allNotes();
-}
 }

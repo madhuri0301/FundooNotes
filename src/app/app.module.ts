@@ -29,6 +29,7 @@ import { ArchiveComponent } from './Components/archive/archive.component';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { AppMaterial } from './services/app.material';
+import { PinComponent } from './Components/pin/pin.component';
 
 
 
@@ -51,7 +52,8 @@ import { AppMaterial } from './services/app.material';
     TrashComponent,
     IconsComponent,
     ColourpalletComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    PinComponent
   ],
   imports: [
     BrowserModule,

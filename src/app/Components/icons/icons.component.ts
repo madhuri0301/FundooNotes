@@ -58,6 +58,7 @@ export class IconsComponent implements OnInit {
       }
       this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
         console.log("Deleted Successfully", data);
+        window.location.reload();
       });
   }
   restore(){
@@ -69,6 +70,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.deleteNotes(data, this.token_Id).subscribe((data)=>{
       console.log("restore Successfully", data);
+      window.location.reload();
     });
   }
   permanent_delete(){
@@ -80,6 +82,7 @@ export class IconsComponent implements OnInit {
     }
     this.note.deleteForever(data, this.token_Id).subscribe((data)=>{
       console.log("parmanent Deleted Successfully", data);
+      window.location.reload();
     });
 }
   archive() {
@@ -91,6 +94,7 @@ export class IconsComponent implements OnInit {
     console.log("note and boolean ", dataArchive);
     this.note.archivedNotes(dataArchive, this.token_Id).subscribe((dataArchive)=>{
       console.log("Archieve Successfully", dataArchive);
+      window.location.reload();
     });
   }
   unarchivePage() {
@@ -102,6 +106,7 @@ export class IconsComponent implements OnInit {
     console.log("note and boolean ", dataArchive);
     this.note.archivedNotes(dataArchive, this.token_Id).subscribe((dataArchive)=>{
       console.log("Unarchieve Successfully", dataArchive);
+      window.location.reload();
     });
   }
 

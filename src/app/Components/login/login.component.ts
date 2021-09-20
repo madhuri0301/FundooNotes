@@ -41,6 +41,9 @@ export class LoginComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
+  // fontcolors=['color:blue','color:red','color:#orange','color:blue','color:green','color:red'];
+  // fonttexts=['F','u','n','d','o','o'];
+
   onSubmit() {
     this.submitted = true;
 

@@ -45,7 +45,7 @@ export class TakeNotesComponent implements OnInit {
         this.description = "";
     
         this.fullEdit = false;
-        // window.location.reload();
+        window.location.reload();
       }, error => {
         console.log("error in register", error);
         

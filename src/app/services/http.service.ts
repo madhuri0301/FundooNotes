@@ -69,21 +69,21 @@ export class HttpService {
   Delete(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
     console.log(data, url);
     let options = { headers: new HttpHeaders({ "Authorization": token }) };
-    return this.http.post(url, data, isHeaderRequired && options)
+    return this.http.post(url, data, isHeaderRequired && options);
   }
 
   //collect those deleted notes
   Trash(url: string, isHeaderRequired: any = false, token: any = null) {
     console.log("data Get");
     let Options = { headers: new HttpHeaders({ "Authorization": token }) };
-    return this.http.get(url, isHeaderRequired && Options)
+    return this.http.get(url, isHeaderRequired && Options);
   }
 
   //coloring notes
   Color(url: string, data: any, isHeaderRequired: any = false, token: any = null) {
     console.log(data, url);
     let options = { headers: new HttpHeaders({ "Authorization": token }) };
-    return this.http.post(url, data, isHeaderRequired && options)
+    return this.http.post(url, data, isHeaderRequired && options);
   }
 
   // UpdateColor(data: any) {
@@ -107,9 +107,9 @@ export class HttpService {
     return this.http.post(url, data, isHeaderRequired && options)
   }
 
-  getArchive(url: string, isHeaderRequired: any = false, token: any = null) {  
+  getArchive(url: string, isHeaderRequired: any = false, token: any = null) {
     console.log("data Got");
-    let tokenOption = {headers: new HttpHeaders({"Authorization": token})};
+    let tokenOption = { headers: new HttpHeaders({ "Authorization": token }) };
     return this.http.get(url, isHeaderRequired && tokenOption)
   }
   Pin(url: string, data: any, isHeaderRequired: any = false, token: any = null) {

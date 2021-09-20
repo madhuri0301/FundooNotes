@@ -32,8 +32,8 @@ export class HeaderComponent implements OnDestroy,OnInit {
     localStorage.clear();
     this.routers.navigateByUrl('login');
   }
-  // refresh() {
-  //   window.location.reload();
-  // }
+  refresh() {
+    window.location.reload();
+  }
 
 }

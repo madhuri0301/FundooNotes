@@ -22,15 +22,22 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     
   }
-  .buttons{
-    background-color: transparent;
-    border: none;
-    margin-left: 100px;
-    margin-bottom: 10px;
+  // .pin{
+  //   background: transparent;
+  //   border: none;
+  //   margin-left: 100px;
+  //   margin-bottom: 10px;
   
-    // display: flex;
-    // justify-content: flex-end;
+  //   // display: flex;
+  //   // justify-content: flex-end;
+  // }
+  .pin{
+    visibility: hidden;
+    
   }
+  .card:hover .pin{
+    visibility: visible;
+  } 
   .icon{
     visibility: hidden;
     

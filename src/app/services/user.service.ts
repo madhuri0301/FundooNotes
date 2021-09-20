@@ -9,7 +9,7 @@ export class UserService {
   constructor(private httpService: HttpService) { }
   register(data: any) {
     console.log("given data is", data);
-    return this.httpService.Post("/user/userSignUp", data, null, false);
+    return this.httpService.postt("/user/userSignUp", data, null, false);
   }
   // login(data: any) {
   //   console.log("given data is", data);
@@ -28,10 +28,5 @@ export class UserService {
     console.log("given data is", data);
     return this.httpService.Post("/user/reset-password", data, null, false);
   }
-  loggedIn(){
-    return !!localStorage.getItem('Token');
-  }
-  logout(){
-    localStorage.removeItem('Token')
-  }
+  
 }

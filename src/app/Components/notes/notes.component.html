@@ -5,9 +5,10 @@
                 <strong class="title">{{note.title}}</strong>
                 
 
-                <button class="buttons" matTooltip="pin Note">
+                <!-- <button class="buttons" matTooltip="pin Note">
                     <img class="icon" src="assets/pin.svg" alt="">
-                </button>
+                </button> -->
+                <app-pin class="pin"></app-pin>
 
             </div>
             <div id="description" #description contenteditable="false" aria-multiline="true" role="textbox"
